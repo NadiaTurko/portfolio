@@ -129,8 +129,7 @@
   }
 
   .home__subtitle::before { 
-    width: 42px;
-    top: 0.8rem
+    width: 0px;
   }
 
   .home__description {
