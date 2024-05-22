@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://nadiaturko.github.io/portfolio/",
+  "homepage": "https://nadiaturko.github.io/cv/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
