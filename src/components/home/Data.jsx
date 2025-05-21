@@ -6,15 +6,17 @@ const Data = () => {
       <h1 className="home__title">Nadia Romanchuk</h1>
       <h3 className="home__subtitle">Front-end (React) Developer</h3>
       <p className="home__description">
-        A goal-oriented Entry Level Front-end Developer with knowledge of HTML,
-        CSS, JavaScript, React seeking to use technical proficiency and
-        creativity to develop engaging user experiences and advance in a
-        professional career.
+        A motivated Front-End Developer with approximately one year of hands-on
+        experience in building responsive and user-friendly web applications
+        using HTML, CSS, JavaScript, and React. Passionate about creating clean,
+        efficient code and intuitive user interfaces. Seeking to contribute
+        technical skills and creativity to a dynamic development team and grow
+        professionally in the field of web development.
       </p>
       <a href="#contact" className="button button--flex">
         Say Hello
         <svg
-          class="button__icon"
+          className="button__icon"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"

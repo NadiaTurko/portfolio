@@ -7,7 +7,7 @@ const Soft = () => {
       <div className="skills__box">
         <div className="skills__group">
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">Problem Solver</h3>
@@ -18,7 +18,7 @@ const Soft = () => {
           </div>
 
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">Adaptable Team Player</h3>
@@ -30,7 +30,7 @@ const Soft = () => {
           </div>
 
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">Continuous Learner</h3>
@@ -41,7 +41,7 @@ const Soft = () => {
           </div>
 
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">Initiative</h3>
@@ -52,7 +52,7 @@ const Soft = () => {
           </div>
 
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">Detail-Oriented</h3>

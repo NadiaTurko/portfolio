@@ -33,7 +33,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="bx bxl-telegram"></i>
+            <i className="bx bxl-telegram"></i>
           </a>
           <a
             href="https://www.linkedin.com/in/nadiia-romanchuk-42930630a/"
@@ -41,7 +41,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="bx bxl-linkedin"></i>
+            <i className="bx bxl-linkedin"></i>
           </a>
           <a
             href="https://github.com/"
@@ -49,7 +49,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="uil uil-github-alt"></i>
+            <i className="uil uil-github-alt"></i>
           </a>
         </div>
         <span className="footer__copy">

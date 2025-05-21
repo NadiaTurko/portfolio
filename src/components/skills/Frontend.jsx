@@ -7,34 +7,43 @@ const Frontend = () => {
       <div className="skills__box">
         <div className="skills__group">
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
-              <h3 className="skills__name">HTML/CSS</h3>
-              <span className="skills__level">Strong</span>
+              <h3 className="skills__name">HTML5, CSS3/ SCSS, Tailwind CSS</h3>
+              <span className="skills__level">Confident</span>
             </div>
           </div>
 
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">JavaScript</h3>
-              <span className="skills__level">Strong</span>
+              <span className="skills__level">Confident</span>
             </div>
           </div>
 
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
+
+            <div>
+              <h3 className="skills__name">jQuery, Gulp</h3>
+              <span className="skills__level">Confident</span>
+            </div>
+          </div>
+
+          <div className="skills__data">
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">React</h3>
-              <span className="skills__level">Good</span>
+              <span className="skills__level">Basic</span>
             </div>
           </div>
 
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">MySQL, MongoDB</h3>
@@ -43,7 +52,7 @@ const Frontend = () => {
           </div>
 
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">Git, GitHub</h3>
@@ -52,7 +61,7 @@ const Frontend = () => {
           </div>
 
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">REST API/HTTP</h3>
@@ -61,7 +70,7 @@ const Frontend = () => {
           </div>
 
           <div className="skills__data">
-            <i class="bx bx-badge-check"></i>
+            <i className="bx bx-badge-check"></i>
 
             <div>
               <h3 className="skills__name">WebStorm, Visual Studio Code</h3>
