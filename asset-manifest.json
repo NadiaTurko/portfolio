@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.aca2d546.css",
-    "main.js": "/portfolio/static/js/main.6deacab0.js",
+    "main.css": "/portfolio/static/css/main.d154d691.css",
+    "main.js": "/portfolio/static/js/main.84abd268.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
-    "static/media/about.jpg": "/portfolio/static/media/about.07b84cc798a5949f9307.jpg",
-    "static/media/profile.jpg": "/portfolio/static/media/profile.07b84cc798a5949f9307.jpg",
-    "static/media/CV_Nadia_Romanchuk_Frontend_(React)_developer.pdf": "/portfolio/static/media/CV_Nadia_Romanchuk_Frontend_(React)_developer.b3e2e6c986b9f4743051.pdf",
+    "static/media/about.jpg": "/portfolio/static/media/about.95f6c97597daabbb94df.jpg",
+    "static/media/profile.jpg": "/portfolio/static/media/profile.b4a305eff2bb793902f7.jpg",
+    "static/media/dental.jpg": "/portfolio/static/media/dental.c4b6340eb98612a054d1.jpg",
+    "static/media/booktrack.jpg": "/portfolio/static/media/booktrack.dba5f61355bbf8ffb26b.jpg",
+    "static/media/nadia-romanchuk-frontend-developer.pdf": "/portfolio/static/media/nadia-romanchuk-frontend-developer.89700af9cf8ed610d06b.pdf",
     "index.html": "/portfolio/index.html",
-    "main.aca2d546.css.map": "/portfolio/static/css/main.aca2d546.css.map",
-    "main.6deacab0.js.map": "/portfolio/static/js/main.6deacab0.js.map",
+    "main.d154d691.css.map": "/portfolio/static/css/main.d154d691.css.map",
+    "main.84abd268.js.map": "/portfolio/static/js/main.84abd268.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aca2d546.css",
-    "static/js/main.6deacab0.js"
+    "static/css/main.d154d691.css",
+    "static/js/main.84abd268.js"
   ]
 }
