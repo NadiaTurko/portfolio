@@ -1,74 +1,152 @@
-# cv
+# Nadia Romanchuk — Frontend Developer Portfolio
 
-# Getting Started with Create React App
+Modern, responsive portfolio website built with **React**, **TypeScript**, and a warm cream & gold design system.  
+Showcases projects, skills, experience, and a contact form — deployed on GitHub Pages.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-C9A86C?style=for-the-badge&logo=github&logoColor=white)](https://nadiaturko.github.io/portfolio/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Preview
 
-### `npm start`
+![Portfolio preview — hero section](./docs/preview.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**[→ Open live site](https://nadiaturko.github.io/portfolio/)**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## About
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Personal portfolio of **Nadia Romanchuk**, a Frontend Developer from Lviv, Ukraine, with 1+ year of commercial experience. The site presents a professional profile, selected projects, tech stack, work history, and direct contact options.
 
-### `npm run build`
+Designed as a single-page application with smooth scroll navigation, scroll animations, and full mobile responsiveness.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Hero section** — introduction, profile photo, social links, and call-to-action buttons
+- **About** — photo with status badge, stats, highlights, and downloadable CV
+- **Skills** — categorized cards (Frontend, Languages & Web, Tools & Workflow, AI & Growth)
+- **Projects** — BookTrack SPA and Dental Clinic website with previews and links
+- **Experience & Education** — interactive timeline tabs
+- **Contact form** — EmailJS integration
+- **Dark / Light theme** — persistent toggle with `localStorage`
+- **Modern UI details** — mesh gradient background, scroll progress bar, scroll spy navigation, glass header, reveal animations
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Category | Technologies |
+|----------|-------------|
+| **Core** | React 18, TypeScript, Create React App |
+| **Styling** | CSS3, CSS Variables, Flexbox & Grid |
+| **Architecture** | SOLID-oriented structure, data layer separation, custom hooks |
+| **Integrations** | EmailJS, Boxicons, Unicons |
+| **Deploy** | GitHub Pages (`gh-pages`) |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+```
+src/
+├── assets/              # Images, CV, barrel exports
+├── components/          # UI sections & reusable components
+│   ├── about/
+│   ├── common/          # Reveal, MeshBackground, ScrollProgress, etc.
+│   ├── contact/
+│   ├── header/
+│   ├── home/
+│   ├── projects/
+│   ├── qualification/
+│   └── skills/
+├── context/             # ThemeContext
+├── data/                # Content (navigation, skills, projects, …)
+├── hooks/               # Scroll, navigation, tabs
+├── services/            # EmailJS service
+└── types/               # Shared TypeScript interfaces
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Content is separated from presentation: update copy and links in `src/data/` without touching components.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Prerequisites
 
-### Analyzing the Bundle Size
+- Node.js 18+
+- npm
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Installation
 
-### Making a Progressive Web App
+```bash
+git clone https://github.com/nadiaturko/portfolio.git
+cd portfolio
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Development
 
-### Advanced Configuration
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Open [http://localhost:3000/portfolio](http://localhost:3000/portfolio) in your browser.
 
-### Deployment
+### Production build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm run build
+```
 
-### `npm run build` fails to minify
+### Deploy to GitHub Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# cv
-# portfolio
+```bash
+npm run deploy
+```
+
+---
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm start` | Start development server |
+| `npm run build` | Create production build |
+| `npm test` | Run test suite |
+| `npm run deploy` | Build and publish to GitHub Pages |
+
+---
+
+## Featured Projects
+
+| Project | Description | Links |
+|---------|-------------|-------|
+| **BookTrack** | Book-tracking SPA with Firebase Auth, favorites, and progress tracking | [Demo](https://nadiaturko.github.io/booktrack/) · [GitHub](https://github.com/NadiaTurko/booktrack) |
+| **Dental Clinic** | Marketing site from Figma to production with Gulp pipeline | [Live site](https://ronevich.com.ua/) |
+
+---
+
+## Contact
+
+- **Email:** [nadrom0211@gmail.com](mailto:nadrom0211@gmail.com)
+- **Telegram:** [@nadrom0211](https://t.me/nadrom0211)
+- **LinkedIn:** [Nadia Romanchuk](https://www.linkedin.com/in/nadiia-romanchuk-42930630a/)
+- **GitHub:** [nadiaturko](https://github.com/nadiaturko)
+
+---
+
+## License
+
+This project is open source and available for personal and educational use.
+
+---
+
+<p align="center">
+  Built with care by <strong>Nadia Romanchuk</strong> · Lviv, Ukraine
+</p>

@@ -1,8 +1,15 @@
 .contact__container {
-    grid-template-columns: repeat(2, max-content);
-    justify-content: center;
-    column-gap: 6rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    column-gap: 3rem;
     padding-bottom: 3rem;
+    width: 100%;
+}
+
+.contact__info {
+    display: grid;
+    row-gap: 1rem;
+    grid-template-columns: 1fr;
 }
 
 .contact__title {
@@ -12,15 +19,9 @@
     margin-bottom: var(--mb-1-5);
 }
 
-.contact__info {
-    display: grid;
-    row-gap: 1rem;
-    grid-template-columns: 300px;
-}
-
 .contact__card {
     background-color: var(--container-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
     padding: 1rem;
     border-radius: 0.75rem;
     text-align: center;
@@ -62,7 +63,7 @@
     transform: translate(0.25rem);
 }
 .contact__form{
-    width: 360px;
+    width: 100%;
 }
 
 .contact__form-div {
@@ -77,7 +78,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 2px solid rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--input-border);
     background: none;
     color: var(--text-color);
     outline: none;
