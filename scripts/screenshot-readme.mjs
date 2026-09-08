@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const outputDir = join(__dirname, "../docs");
-const outputPath = join(outputDir, "preview.png");
+const outputPath = join(outputDir, "preview.webp");
 const url = process.env.SCREENSHOT_URL ?? "http://localhost:3000/portfolio";
 
 async function main() {
@@ -20,7 +20,12 @@ async function main() {
   try {
     await page.goto(url, { waitUntil: "networkidle", timeout: 60000 });
     await page.waitForTimeout(2000);
-    await page.screenshot({ path: outputPath, fullPage: false });
+    await page.screenshot({
+      path: outputPath,
+      type: "webp",
+      quality: 80,
+      fullPage: false,
+    });
     console.log(`Saved ${outputPath}`);
   } finally {
     await browser.close();

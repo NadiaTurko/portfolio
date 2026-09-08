@@ -9,7 +9,12 @@ async function capture(page, url, outputPath, setup) {
   await page.goto(url, { waitUntil: "networkidle", timeout: 90000 });
   if (setup) await setup(page);
   await page.waitForTimeout(2500);
-  await page.screenshot({ path: outputPath, fullPage: false });
+  await page.screenshot({
+    path: outputPath,
+    type: "webp",
+    quality: 80,
+    fullPage: false,
+  });
   console.log(`Saved ${outputPath}`);
 }
 
@@ -24,7 +29,7 @@ async function main() {
     await capture(
       page,
       "https://nadiaturko.github.io/booktrack/",
-      join(assetsDir, "project-booktrack.png"),
+      join(assetsDir, "images/projects/booktrack.webp"),
       async (activePage) => {
         const demoButton = activePage.getByRole("button", { name: /demo user/i });
         if (await demoButton.isVisible()) {
@@ -37,7 +42,7 @@ async function main() {
     await capture(
       page,
       "https://ronevich.com.ua/",
-      join(assetsDir, "project-dental.png"),
+      join(assetsDir, "images/projects/dental.webp"),
       async (activePage) => {
         const popupClose = activePage.locator(".popup, .modal, [class*='popup'], [class*='modal']").first();
         if (await popupClose.count()) {

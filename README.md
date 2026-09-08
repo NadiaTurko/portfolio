@@ -11,7 +11,7 @@ Showcases projects, skills, experience, and a contact form — deployed on GitHu
 
 ## Preview
 
-![Portfolio preview — hero section](./docs/preview.png)
+![Portfolio preview — hero section](./docs/preview.webp)
 
 **[→ Open live site](https://nadiaturko.github.io/portfolio/)**
 

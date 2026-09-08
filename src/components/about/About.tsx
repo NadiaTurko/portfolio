@@ -23,6 +23,8 @@ const About = () => {
                 src={aboutPhotoImg}
                 alt="Nadia Romanchuk"
                 className="about__img"
+                width={640}
+                height={800}
                 loading="lazy"
                 decoding="async"
               />

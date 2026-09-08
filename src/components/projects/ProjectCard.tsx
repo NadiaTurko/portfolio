@@ -8,7 +8,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => (
       rel="noreferrer"
       className="projects__preview"
     >
-      <img src={project.image} alt={project.alt} className="projects__image" />
+      <img
+        src={project.image}
+        alt={project.alt}
+        className="projects__image"
+        width={960}
+        height={600}
+        loading="lazy"
+        decoding="async"
+      />
       <span className="projects__type-badge">{project.type}</span>
       <span className="projects__preview-overlay">
         <i className="bx bx-link-external"></i>
