@@ -30,7 +30,7 @@ Designed as a single-page application with smooth scroll navigation, scroll anim
 - **Hero section** — introduction, profile photo, social links, and call-to-action buttons
 - **About** — photo with status badge, stats, highlights, and downloadable CV
 - **Skills** — categorized cards (Frontend, Languages & Web, Tools & Workflow, AI & Growth)
-- **Projects** — BookTrack SPA and Dental Clinic website with previews and links
+- **Projects** — BookTrack reading library and Dental Clinic website with previews and links
 - **Experience & Education** — interactive timeline tabs
 - **Contact form** — EmailJS integration
 - **Dark / Light theme** — persistent toggle with `localStorage`
@@ -127,7 +127,7 @@ npm run deploy
 
 | Project | Description | Links |
 |---------|-------------|-------|
-| **BookTrack** | Book-tracking SPA with Firebase Auth, favorites, and progress tracking | [Demo](https://nadiaturko.github.io/booktrack/) · [GitHub](https://github.com/NadiaTurko/booktrack) |
+| **BookTrack** | Reading library with shelves, search, favorites, progress, and notes | [Demo](https://nadiaturko.github.io/booktrack/) · [GitHub](https://github.com/NadiaTurko/booktrack) |
 | **Dental Clinic** | Marketing site from Figma to production with Gulp pipeline | [Live site](https://ronevich.com.ua/) |
 
 ---
