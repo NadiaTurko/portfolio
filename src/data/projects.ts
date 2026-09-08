@@ -11,10 +11,10 @@ export const projects: Project[] = [
     type: "Personal Project",
     period: "Dec 2025 – Jan 2026",
     description:
-      "Book-tracking SPA with Firebase Authentication (email + Google). Built debounced search, favorites, and progress tracking via custom hooks and Context API.",
+      "Personal reading library with shelves, smart collections, and four view modes. Search titles and authors, track progress, save favorites, and add notes — with Firebase Auth and Context API.",
     stack: ["React", "Context API", "React Router", "Firebase Auth", "Formik", "Tailwind CSS"],
     image: projectBooktrackImg,
-    alt: "BookTrack app preview",
+    alt: "BookTrack reading library dashboard",
     demo: "https://nadiaturko.github.io/booktrack/",
     github: "https://github.com/NadiaTurko/booktrack",
   },
