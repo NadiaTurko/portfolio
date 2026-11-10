@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.bdb4ccbc.css",
-    "main.js": "/portfolio/static/js/main.f4328fa1.js",
+    "main.css": "/portfolio/static/css/main.c7a1fab6.css",
+    "main.js": "/portfolio/static/js/main.cc327901.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/about.webp": "/portfolio/static/media/about.f054d48a800940dd6110.webp",
     "static/media/nadia-romanchuk-frontend-developer.pdf": "/portfolio/static/media/nadia-romanchuk-frontend-developer.89700af9cf8ed610d06b.pdf",
@@ -12,12 +12,12 @@
     "static/media/clinic-ai-agent.webp": "/portfolio/static/media/clinic-ai-agent.60bc9c38e326e07e99e5.webp",
     "static/media/tvoje-oslava.webp": "/portfolio/static/media/tvoje-oslava.c2cdbfda229a82f006d0.webp",
     "index.html": "/portfolio/index.html",
-    "main.bdb4ccbc.css.map": "/portfolio/static/css/main.bdb4ccbc.css.map",
-    "main.f4328fa1.js.map": "/portfolio/static/js/main.f4328fa1.js.map",
+    "main.c7a1fab6.css.map": "/portfolio/static/css/main.c7a1fab6.css.map",
+    "main.cc327901.js.map": "/portfolio/static/js/main.cc327901.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bdb4ccbc.css",
-    "static/js/main.f4328fa1.js"
+    "static/css/main.c7a1fab6.css",
+    "static/js/main.cc327901.js"
   ]
 }
