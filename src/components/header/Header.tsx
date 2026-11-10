@@ -4,6 +4,7 @@ import { useTheme } from "../../context/ThemeContext";
 import useScrollHeader from "../../hooks/useScrollHeader";
 import useActiveSection from "../../hooks/useActiveSection";
 import { navLinks } from "../../data/navigation";
+import CommandPalette from "../command/CommandPalette";
 
 const sectionIds = navLinks.map((link) => link.href);
 
@@ -51,6 +52,8 @@ const Header = () => {
         </div>
 
         <div className="nav__actions">
+          <CommandPalette />
+
           <button
             type="button"
             className="theme-toggle"

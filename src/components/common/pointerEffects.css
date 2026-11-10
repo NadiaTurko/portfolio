@@ -1,0 +1,46 @@
+.pointer-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+}
+
+.pointer-glow {
+  z-index: -1;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsla(38, 70%, 60%, 0.14), transparent 65%);
+  transition: opacity 0.4s ease;
+}
+
+.pointer-glow--visible {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .pointer-glow {
+    display: block;
+  }
+
+  .skills__card,
+  .contact__card,
+  .qualification__card,
+  .github__repo {
+    background-image: radial-gradient(
+      280px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      hsla(38, 65%, 60%, var(--spot-strength, 0)),
+      transparent 70%
+    );
+  }
+
+  .skills__card:hover,
+  .contact__card:hover,
+  .qualification__card:hover,
+  .github__repo:hover {
+    --spot-strength: 0.17;
+  }
+}

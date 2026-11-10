@@ -1,0 +1,209 @@
+.command-trigger {
+  display: none;
+  align-items: center;
+  gap: 0.375rem;
+  height: 2.5rem;
+  padding-inline: 0.625rem;
+  font-size: 0.75rem;
+  color: var(--text-color);
+  background-color: var(--container-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.command-trigger i {
+  font-size: 1.1rem;
+}
+
+.command-trigger:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.command-trigger:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.command-trigger__keys {
+  font-family: var(--body-font);
+  font-weight: var(--font-medium);
+}
+
+/* A keyboard shortcut only makes sense where there is a keyboard and room for the button. */
+@media (hover: hover) and (pointer: fine) and (min-width: 993px) {
+  .command-trigger {
+    display: inline-flex;
+  }
+}
+
+.command {
+  width: min(560px, calc(100vw - 2rem));
+  margin: 14vh auto auto;
+  padding: 0;
+  overflow: hidden;
+  color: var(--text-color);
+  background-color: var(--container-color);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  box-shadow: 0 24px 70px hsla(30, 30%, 4%, 0.5);
+}
+
+.command[open] {
+  animation: command-in 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.command::backdrop {
+  background: hsla(30, 20%, 5%, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+@keyframes command-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+}
+
+.command__search {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.command__search > i {
+  font-size: 1.25rem;
+  color: var(--accent-color);
+}
+
+.command__input {
+  flex: 1;
+  min-width: 0;
+  font-size: 1rem;
+  color: var(--title-color);
+  background: none;
+  border: 0;
+  outline: none;
+}
+
+.command__input::placeholder {
+  color: var(--text-color);
+}
+
+.command__list {
+  max-height: min(340px, 50vh);
+  padding: 0.375rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.command__group {
+  padding: 0.625rem 0.625rem 0.25rem;
+  font-size: 0.688rem;
+  font-weight: var(--font-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.command__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.625rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+  border-radius: 0.625rem;
+  cursor: pointer;
+  scroll-margin-block: 2rem;
+}
+
+.command__item[aria-selected="true"] {
+  background: var(--accent-light);
+}
+
+.command__icon {
+  width: 1.125rem;
+  font-size: 1.125rem;
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.command__enter {
+  margin-left: auto;
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0;
+}
+
+.command__item[aria-selected="true"] .command__enter {
+  opacity: 1;
+}
+
+.command__empty {
+  padding: 1.75rem 1rem;
+  font-size: var(--small-font-size);
+  text-align: center;
+}
+
+.command__footer {
+  display: flex;
+  gap: 1rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.command__footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.command__key {
+  padding: 0.05rem 0.35rem;
+  font-family: var(--body-font);
+  font-size: 0.688rem;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.3rem;
+}
+
+.command-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 0.5rem 0.875rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+  background-color: var(--container-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 2rem;
+  box-shadow: var(--shadow-md);
+  animation: command-in 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.command-toast i {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .command[open],
+  .command-toast {
+    animation: none;
+  }
+}

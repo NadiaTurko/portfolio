@@ -168,15 +168,86 @@ img {
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* The theme change is revealed by a clip-path animation started from ThemeContext. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 6rem 0 2rem;
 }
 
 .section__title {
+  width: fit-content;
+  margin-inline: auto;
   font-size: var(--h1-font-size);
   font-family: var(--heading-font);
   color: var(--title-color);
+}
+
+/* Shared by the hero name and every section heading: wipe-in, then a slow gold sweep. */
+.animated-title {
+  background: linear-gradient(
+    110deg,
+    var(--title-color) 0%,
+    var(--title-color) 30%,
+    var(--accent-color) 50%,
+    var(--title-color) 70%,
+    var(--title-color) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animated-title--play,
+.reveal--visible .animated-title {
+  animation:
+    title-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both,
+    title-shine 7s linear 1.2s infinite;
+}
+
+@keyframes title-reveal {
+  from {
+    clip-path: inset(-10% 100% -10% 0);
+    transform: translateX(-12px);
+  }
+  to {
+    clip-path: inset(-10% -2% -10% 0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes title-shine {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-title--play,
+  .reveal--visible .animated-title {
+    animation: none;
+  }
 }
 
 .section__title::after {
@@ -257,7 +328,7 @@ img {
   padding: 1rem 1.75rem;
   border-radius: 0.75rem;
   font-weight: var(--font-medium);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, translate 0.2s ease-out;
   box-shadow: var(--shadow-sm);
 }
 

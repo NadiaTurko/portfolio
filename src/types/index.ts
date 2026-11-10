@@ -1,3 +1,5 @@
+import type { MouseEvent } from "react";
+
 export type Theme = "light" | "dark";
 
 export type SkillLevel =
@@ -20,6 +22,16 @@ export interface SkillCategory {
   skills: Skill[];
 }
 
+export interface ProjectMetric {
+  value: string;
+  label: string;
+}
+
+export interface ProjectResults {
+  caption: string;
+  metrics: ProjectMetric[];
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -29,7 +41,8 @@ export interface Project {
   stack: string[];
   image: string;
   alt: string;
-  demo: string;
+  results?: ProjectResults;
+  demo?: string;
   github?: string;
 }
 
@@ -38,9 +51,15 @@ export interface AboutStat {
   value?: string;
   label: string;
   sub: string;
-  icon: string;
-  formats?: boolean;
   compactValue?: boolean;
+  timeZone?: string;
+}
+
+export interface AboutAccordionItem {
+  id: string;
+  title: string;
+  text?: string;
+  tags?: readonly string[];
 }
 
 export interface NavLinkItem {
@@ -67,8 +86,8 @@ export interface TimelineEntry {
   title: string;
   subtitle: string;
   period: string;
-  align: "left" | "right";
   description?: string;
+  tags?: string[];
 }
 
 export interface QualificationTab {
@@ -83,6 +102,7 @@ export interface ContactCardData {
   data: string;
   href: string;
   icon: string;
+  copyable?: boolean;
 }
 
 export interface CtaLink {
@@ -90,17 +110,50 @@ export interface CtaLink {
   href: string;
 }
 
+export interface HeroChip {
+  label: string;
+  icon: string;
+}
+
 export interface HomeContent {
   name: string;
   title: string;
-  description: string;
+  roles: string[];
+  chips: HeroChip[];
+  lead: string;
+  paragraphs: string[];
   primaryCta: CtaLink;
   secondaryCta: CtaLink;
 }
 
+export interface ThemeToggleOrigin {
+  clientX: number;
+  clientY: number;
+}
+
 export interface ThemeContextValue {
   theme: Theme;
-  toggleTheme: () => void;
+  toggleTheme: (origin?: ThemeToggleOrigin) => void;
+}
+
+export interface GitHubRepo {
+  name: string;
+  url: string;
+  language: string | null;
+  pushedAt: string;
+}
+
+export interface GitHubDay {
+  date: string;
+  count: number;
+  level: number;
+}
+
+export interface GitHubActivity {
+  repoCount: number;
+  total: number;
+  repos: GitHubRepo[];
+  days: GitHubDay[];
 }
 
 export interface SectionHeaderProps {
@@ -115,20 +168,55 @@ export interface SocialLinksProps {
   linkClassName: string;
 }
 
-export interface SkillCardProps {
-  category: SkillCategory;
+export interface SkillFilterOption {
+  level: SkillLevel;
+  label: string;
+  count: number;
 }
 
-export interface ProjectCardProps {
+export interface SkillFiltersProps {
+  filters: SkillFilterOption[];
+  totalCount: number;
+  activeLevel: SkillLevel | null;
+  onChange: (level: SkillLevel | null) => void;
+}
+
+export interface SkillCardProps {
+  category: SkillCategory;
+  activeLevel: SkillLevel | null;
+}
+
+export type DeckPosition = "0" | "1" | "2" | "3" | "out";
+
+export interface ProjectSlideProps {
   project: Project;
+  position: DeckPosition;
+  onClick: (event: MouseEvent<HTMLElement>) => void;
+}
+
+export interface ProjectDetailsProps {
+  project: Project;
+  number: string;
+  isActive: boolean;
+}
+
+export interface ProjectsSlideshowProps {
+  projects: Project[];
 }
 
 export interface StatBoxProps {
   stat: AboutStat;
 }
 
+export interface TimelineProps {
+  items: TimelineEntry[];
+}
+
 export interface TimelineItemProps {
   item: TimelineEntry;
+  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
 export interface ContactCardProps {

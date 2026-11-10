@@ -3,7 +3,7 @@ import type { SectionHeaderProps } from "../../types";
 
 const SectionHeader = ({ title, subtitle, delay = 0 }: SectionHeaderProps) => (
   <Reveal delay={delay}>
-    <h2 className="section__title">{title}</h2>
+    <h2 className="section__title animated-title">{title}</h2>
     <span className="section__subtitle">{subtitle}</span>
   </Reveal>
 );

@@ -20,6 +20,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Zustand", level: "production" },
       { name: "React Router", level: "confident" },
       { name: "TanStack Query", level: "confident" },
+      { name: "Next.js", level: "learning" },
       { name: "SOLID", level: "confident" },
       { name: "DRY", level: "confident" },
       { name: "KISS", level: "confident" },
@@ -55,6 +56,10 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Cursor", level: "ai" },
       { name: "Claude Code", level: "ai" },
+      { name: "n8n agents", level: "ai" },
+      { name: "MCP connectors", level: "ai" },
+      { name: "API integrations & webhooks", level: "ai" },
+      { name: "Google Workspace automation (Calendar, Gmail, Drive, Sheets)", level: "ai" },
       { name: "Jest / RTL", level: "learning" },
       { name: "MySQL / MongoDB", level: "basic" },
       { name: "English B1 — actively improving", level: "learning" },
