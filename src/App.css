@@ -19,7 +19,7 @@
   --shadow-md: 0 4px 20px hsla(30, 20%, 15%, 0.1);
   --gradient-accent: linear-gradient(135deg, hsl(38, 42%, 52%), hsl(32, 38%, 46%));
   --button-text: hsl(40, 40%, 99%);
-  --footer-bg: hsl(30, 15%, 14%);
+  --footer-bg: hsl(30, 15%, 5%);
   --footer-text: hsl(38, 30%, 96%);
   --footer-text-muted: hsl(38, 15%, 72%);
   --footer-copy-muted: hsl(38, 10%, 58%);

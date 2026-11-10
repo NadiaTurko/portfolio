@@ -18,11 +18,13 @@ type ViewTransitionDocument = Document & {
 
 const REVEAL_MS = 650;
 
+// A new key on purpose: the old "theme" value was saved automatically on every visit.
+const PREFERENCE_KEY = "theme-preference";
+
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export const getInitialTheme = (): Theme => {
-  const saved = localStorage.getItem("theme");
-  return saved === "light" ? "light" : "dark";
+  return localStorage.getItem(PREFERENCE_KEY) === "light" ? "light" : "dark";
 };
 
 interface ThemeProviderProps {
@@ -34,12 +36,12 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
   }, [theme]);
 
   /** Reveals the new theme as a circle growing from the click, where the browser allows it. */
   const toggleTheme = (origin?: ThemeToggleOrigin): void => {
     const next: Theme = theme === "light" ? "dark" : "light";
+    localStorage.setItem(PREFERENCE_KEY, next);
     const { startViewTransition } = document as ViewTransitionDocument;
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
