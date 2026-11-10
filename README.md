@@ -19,7 +19,7 @@ Showcases projects, skills, experience, and a contact form — deployed on GitHu
 
 ## About
 
-Personal portfolio of **Nadia Romanchuk**, a Frontend Developer from Lviv, Ukraine, with 1+ year of commercial experience. The site presents a professional profile, selected projects, tech stack, work history, and direct contact options.
+Personal portfolio of **Nadia Romanchuk**, a Frontend Developer from Lviv, Ukraine, with 2+ years of commercial experience. The site presents a professional profile, selected projects, tech stack, work history, and direct contact options.
 
 Designed as a single-page application with smooth scroll navigation, scroll animations, and full mobile responsiveness.
 
@@ -30,7 +30,7 @@ Designed as a single-page application with smooth scroll navigation, scroll anim
 - **Hero section** — introduction, profile photo, social links, and call-to-action buttons
 - **About** — photo with status badge, stats, highlights, and downloadable CV
 - **Skills** — categorized cards (Frontend, Languages & Web, Tools & Workflow, AI & Growth)
-- **Projects** — BookTrack reading library and Dental Clinic website with previews and links
+- **Projects** — BookTrack reading library, Dental Clinic website, Tvoje Oslava party studio site, Magic One clinic site, and Clinic AI Agent in an interactive 3D slideshow
 - **Experience & Education** — interactive timeline tabs
 - **Contact form** — EmailJS integration
 - **Dark / Light theme** — persistent toggle with `localStorage`
@@ -129,6 +129,9 @@ npm run deploy
 |---------|-------------|-------|
 | **BookTrack** | Reading library with shelves, search, favorites, progress, and notes | [Demo](https://nadiaturko.github.io/booktrack/) · [GitHub](https://github.com/NadiaTurko/booktrack) |
 | **Dental Clinic** | Marketing site from Figma to production with Gulp pipeline | [Live site](https://ronevich.com.ua/) |
+| **Tvoje Oslava** | Party studio and gift shop site with online shop, party programs, and workshops | [Live site](https://www.tvoje-oslava.cz/) |
+| **Magic One** | Multi-page dental clinic site in Ukrainian and Polish with online appointment booking | [Live site](https://www.magicone.com.ua/) |
+| **Clinic AI Agent** | AI agent built with Claude Code and n8n that delivers clinic reports to Telegram | Private |
 
 ---
 

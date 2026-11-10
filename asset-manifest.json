@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.d154d691.css",
-    "main.js": "/portfolio/static/js/main.66cbbcff.js",
+    "main.css": "/portfolio/static/css/main.96429f9c.css",
+    "main.js": "/portfolio/static/js/main.58e4c164.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
-    "static/media/about.webp": "/portfolio/static/media/about.3cc69b2ebfb2963b23e5.webp",
+    "static/media/about.webp": "/portfolio/static/media/about.f054d48a800940dd6110.webp",
     "static/media/nadia-romanchuk-frontend-developer.pdf": "/portfolio/static/media/nadia-romanchuk-frontend-developer.89700af9cf8ed610d06b.pdf",
-    "static/media/profile.webp": "/portfolio/static/media/profile.e49535e41adf3fc51f82.webp",
+    "static/media/profile.webp": "/portfolio/static/media/profile.fa95b321c4f01e638698.webp",
     "static/media/dental.webp": "/portfolio/static/media/dental.2ceac5736403cab174e9.webp",
+    "static/media/magic-one.webp": "/portfolio/static/media/magic-one.d5caf0659b2dfa26f1e6.webp",
     "static/media/booktrack.webp": "/portfolio/static/media/booktrack.24a7c7a0649528d05aad.webp",
+    "static/media/clinic-ai-agent.webp": "/portfolio/static/media/clinic-ai-agent.60bc9c38e326e07e99e5.webp",
+    "static/media/tvoje-oslava.webp": "/portfolio/static/media/tvoje-oslava.c2cdbfda229a82f006d0.webp",
     "index.html": "/portfolio/index.html",
-    "main.d154d691.css.map": "/portfolio/static/css/main.d154d691.css.map",
-    "main.66cbbcff.js.map": "/portfolio/static/js/main.66cbbcff.js.map",
+    "main.96429f9c.css.map": "/portfolio/static/css/main.96429f9c.css.map",
+    "main.58e4c164.js.map": "/portfolio/static/js/main.58e4c164.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d154d691.css",
-    "static/js/main.66cbbcff.js"
+    "static/css/main.96429f9c.css",
+    "static/js/main.58e4c164.js"
   ]
 }
