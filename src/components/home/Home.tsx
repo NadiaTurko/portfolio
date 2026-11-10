@@ -28,15 +28,6 @@ const Home = () => {
                   fetchPriority="high"
                   decoding="async"
                 />
-                <img
-                  src={heroProfileImg}
-                  alt=""
-                  aria-hidden="true"
-                  className="home__img-reveal"
-                  width={480}
-                  height={745}
-                  decoding="async"
-                />
               </div>
 
               {homeContent.chips.map((chip, index) => (

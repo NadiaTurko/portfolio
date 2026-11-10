@@ -5,7 +5,7 @@ const ENABLED_QUERY =
   "(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)";
 const MAGNET_SELECTOR = ".button";
 const SPOTLIGHT_SELECTOR =
-  ".skills__card, .contact__card, .home__img, .qualification__card, .github__repo";
+  ".skills__card, .contact__card, .qualification__card, .github__repo";
 
 const MAGNET_STRENGTH = 0.28;
 const GLOW_EASE = 0.09;
