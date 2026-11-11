@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.57a2a9c5.css",
-    "main.js": "/portfolio/static/js/main.3463a15a.js",
+    "main.css": "/portfolio/static/css/main.a961a054.css",
+    "main.js": "/portfolio/static/js/main.ebde10ae.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/about.webp": "/portfolio/static/media/about.f054d48a800940dd6110.webp",
     "static/media/profile.webp": "/portfolio/static/media/profile.fa95b321c4f01e638698.webp",
@@ -12,12 +12,12 @@
     "static/media/clinic-ai-agent.webp": "/portfolio/static/media/clinic-ai-agent.60bc9c38e326e07e99e5.webp",
     "static/media/tvoje-oslava.webp": "/portfolio/static/media/tvoje-oslava.c2cdbfda229a82f006d0.webp",
     "index.html": "/portfolio/index.html",
-    "main.57a2a9c5.css.map": "/portfolio/static/css/main.57a2a9c5.css.map",
-    "main.3463a15a.js.map": "/portfolio/static/js/main.3463a15a.js.map",
+    "main.a961a054.css.map": "/portfolio/static/css/main.a961a054.css.map",
+    "main.ebde10ae.js.map": "/portfolio/static/js/main.ebde10ae.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.57a2a9c5.css",
-    "static/js/main.3463a15a.js"
+    "static/css/main.a961a054.css",
+    "static/js/main.ebde10ae.js"
   ]
 }
