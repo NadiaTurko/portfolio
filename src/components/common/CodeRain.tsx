@@ -2,6 +2,9 @@ import { useEffect, useRef } from "react";
 import "./codeRain.css";
 
 const FRAME_MS = 60;
+/** Phones and tablets get a lighter version: lower resolution, sparser, paused while scrolling. */
+const LIGHT_QUERY = "(hover: none), (max-width: 992px)";
+const SCROLL_PAUSE_MS = 180;
 const FONT_SIZE = 13;
 const COLUMN_WIDTH = 20;
 const ACTIVE_SHARE = 0.55;
@@ -71,18 +74,21 @@ const CodeRain = () => {
     let tokens: Token[] = [];
     let frame = 0;
     let lastTime = 0;
+    const light = window.matchMedia(LIGHT_QUERY).matches;
+    const columnWidth = light ? COLUMN_WIDTH + 8 : COLUMN_WIDTH;
+    let lastScroll = 0;
     let rainColor = readColor("--rain-color");
     let tokenColor = readColor("--rain-token");
 
     const drawCell = (x: number, y: number): void => {
-      fieldContext.clearRect(x - 1, y - FONT_SIZE, COLUMN_WIDTH, ROW_HEIGHT);
+      fieldContext.clearRect(x - 1, y - FONT_SIZE, columnWidth, ROW_HEIGHT);
       fieldContext.fillStyle = `rgba(${rainColor}, ${0.04 + Math.random() * 0.09})`;
       fieldContext.fillText(Math.random() < 0.5 ? "0" : "1", x, y);
     };
 
     const drawField = (): void => {
       fieldContext.clearRect(0, 0, width, height);
-      for (let x = 4; x < width; x += COLUMN_WIDTH) {
+      for (let x = 4; x < width; x += columnWidth) {
         for (let y = ROW_HEIGHT; y < height + ROW_HEIGHT; y += ROW_HEIGHT) {
           drawCell(x, y);
         }
@@ -90,9 +96,10 @@ const CodeRain = () => {
     };
 
     const setup = (): void => {
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      const ratio = light ? 1 : Math.min(window.devicePixelRatio || 1, 2);
       width = window.innerWidth;
-      height = window.innerHeight;
+      // Mobile toolbars change innerHeight while scrolling; size for the tallest case once.
+      height = light ? Math.max(window.innerHeight, window.screen.height) : window.innerHeight;
       [canvas, field].forEach((element) => {
         element.width = width * ratio;
         element.height = height * ratio;
@@ -102,8 +109,8 @@ const CodeRain = () => {
       context.font = `${FONT_SIZE}px "JetBrains Mono", monospace`;
       fieldContext.font = `${FONT_SIZE}px "JetBrains Mono", monospace`;
       drawField();
-      columns = Array.from({ length: Math.ceil(width / COLUMN_WIDTH) }, (_, index) => ({
-        x: index * COLUMN_WIDTH + 4,
+      columns = Array.from({ length: Math.ceil(width / columnWidth) }, (_, index) => ({
+        x: index * columnWidth + 4,
         y: Math.random() * height,
         speed: 0.15 + Math.random() * 0.45,
         active: Math.random() < ACTIVE_SHARE,
@@ -114,6 +121,7 @@ const CodeRain = () => {
     const draw = (time: number): void => {
       frame = window.requestAnimationFrame(draw);
       if (time - lastTime < FRAME_MS) return;
+      if (light && time - lastScroll < SCROLL_PAUSE_MS) return;
       lastTime = time;
 
       // Fade what is already drawn so each column leaves a short trail.
@@ -122,10 +130,10 @@ const CodeRain = () => {
       context.fillRect(0, 0, width, height);
       context.globalCompositeOperation = "source-over";
 
-      const flickers = Math.ceil((width / COLUMN_WIDTH) * (height / ROW_HEIGHT) * FLICKER_SHARE);
+      const flickers = Math.ceil((width / columnWidth) * (height / ROW_HEIGHT) * FLICKER_SHARE);
       for (let index = 0; index < flickers; index += 1) {
         drawCell(
-          4 + Math.floor(Math.random() * (width / COLUMN_WIDTH)) * COLUMN_WIDTH,
+          4 + Math.floor(Math.random() * (width / columnWidth)) * columnWidth,
           ROW_HEIGHT + Math.floor(Math.random() * (height / ROW_HEIGHT)) * ROW_HEIGHT
         );
       }
@@ -166,8 +174,14 @@ const CodeRain = () => {
 
     let resizeTimer = 0;
     const handleResize = (): void => {
+      // On touch devices only a width change (rotation) needs a rebuild.
+      if (light && window.innerWidth === width) return;
       window.clearTimeout(resizeTimer);
       resizeTimer = window.setTimeout(setup, 200);
+    };
+
+    const handleScroll = (): void => {
+      lastScroll = performance.now();
     };
 
     const themeObserver = new MutationObserver(() => {
@@ -179,6 +193,7 @@ const CodeRain = () => {
     setup();
     frame = window.requestAnimationFrame(draw);
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     document.addEventListener("visibilitychange", handleVisibility);
     themeObserver.observe(document.documentElement, {
       attributes: true,
@@ -189,6 +204,7 @@ const CodeRain = () => {
       window.cancelAnimationFrame(frame);
       window.clearTimeout(resizeTimer);
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("visibilitychange", handleVisibility);
       themeObserver.disconnect();
     };

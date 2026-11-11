@@ -488,3 +488,24 @@ body .contact__content::before {
   -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent);
   mask-image: radial-gradient(closest-side, #000 55%, transparent);
 }
+
+/* Phones and tablets: live blur over the animated background costs too much while scrolling. */
+@media (hover: none), (max-width: 992px) {
+  body .skills__card,
+  body .qualification__card,
+  body .qualification__tabs,
+  body .skills__filters,
+  body .contact__card,
+  body .contact__form,
+  body .github__panel,
+  body .github__repo,
+  body .command,
+  body .home__data::before,
+  body .about__data::before,
+  body .section__heading::before,
+  body .projects__details-stack::before,
+  body .contact__content::before {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}

@@ -461,6 +461,12 @@
 
 /*=============== BREAKPOINTS ===============*/
 @media screen and (max-width: 992px) {
+  /* Animated blur is expensive on phones; keep the beam and glow still. */
+  .home__visual::after,
+  .home__visual::before {
+    animation: none;
+  }
+
   .home__content {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 2rem;
