@@ -10,13 +10,13 @@ import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import ScrollUp from "./components/scrollup/ScrollUp";
 import ScrollProgress from "./components/common/ScrollProgress";
-import MeshBackground from "./components/common/MeshBackground";
+import CodeRain from "./components/common/CodeRain";
 import PointerEffects from "./components/common/PointerEffects";
 
 const App = () => {
   return (
     <>
-      <MeshBackground />
+      <CodeRain />
       <PointerEffects />
       <ScrollProgress />
       <Header />

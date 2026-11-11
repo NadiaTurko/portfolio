@@ -13,6 +13,7 @@ export const skillLevelLabels: Record<SkillLevel, string> = {
 export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend",
+    subtitle: "ui → routing → state → principles",
     icon: "bx-code-alt",
     skills: [
       { name: "React", level: "production" },
@@ -25,9 +26,24 @@ export const skillCategories: SkillCategory[] = [
       { name: "DRY", level: "confident" },
       { name: "KISS", level: "confident" },
     ],
+    rows: [
+      { label: "UI", items: ["React", "React Router", "Next.js"] },
+      { label: "State", items: ["Redux / Toolkit", "Zustand", "TanStack Query"] },
+      { label: "Code", items: ["SOLID", "DRY", "KISS"] },
+    ],
+    links: [
+      ["React", "React Router"],
+      ["React Router", "Next.js"],
+      ["React", "Redux / Toolkit"],
+      ["React", "Zustand"],
+      ["React Router", "TanStack Query"],
+      ["SOLID", "DRY"],
+      ["DRY", "KISS"],
+    ],
   },
   {
     title: "Languages & Web",
+    subtitle: "languages → styles → data",
     icon: "bx-globe",
     skills: [
       { name: "JavaScript", level: "confident" },
@@ -37,9 +53,22 @@ export const skillCategories: SkillCategory[] = [
       { name: "Tailwind CSS", level: "confident" },
       { name: "REST API / Axios", level: "good" },
     ],
+    rows: [
+      { label: "Lang", items: ["JavaScript", "TypeScript"] },
+      { label: "Style", items: ["HTML / CSS", "SCSS", "Tailwind CSS"] },
+      { label: "Data", items: ["REST API / Axios"] },
+    ],
+    links: [
+      ["JavaScript", "TypeScript"],
+      ["JavaScript", "HTML / CSS"],
+      ["HTML / CSS", "SCSS"],
+      ["SCSS", "Tailwind CSS"],
+      ["TypeScript", "REST API / Axios"],
+    ],
   },
   {
     title: "Tools & Workflow",
+    subtitle: "design → build → ship",
     icon: "bx-wrench",
     skills: [
       { name: "Git / GitHub", level: "daily" },
@@ -49,9 +78,22 @@ export const skillCategories: SkillCategory[] = [
       { name: "WebStorm / VS Code", level: "daily" },
       { name: "Figma → Code", level: "production" },
     ],
+    rows: [
+      { label: "Design", items: ["Figma → Code"] },
+      { label: "Build", items: ["WebStorm / VS Code", "Gulp", "Chrome DevTools"] },
+      { label: "Ship", items: ["Git / GitHub", "WordPress"] },
+    ],
+    links: [
+      ["Figma → Code", "WebStorm / VS Code"],
+      ["WebStorm / VS Code", "Gulp"],
+      ["Gulp", "Chrome DevTools"],
+      ["WebStorm / VS Code", "Git / GitHub"],
+      ["Gulp", "WordPress"],
+    ],
   },
   {
     title: "AI & Growth",
+    subtitle: "ai-assisted delivery, human review",
     icon: "bx-chip",
     skills: [
       { name: "Cursor", level: "ai" },
@@ -64,5 +106,27 @@ export const skillCategories: SkillCategory[] = [
       { name: "MySQL / MongoDB", level: "basic" },
       { name: "English B1 — actively improving", level: "learning" },
     ],
+    rows: [
+      { label: "Tools", items: ["Cursor", "Claude Code"] },
+      { label: "Core", items: ["n8n agents"] },
+      {
+        label: "Connect",
+        items: [
+          "MCP connectors",
+          "API integrations & webhooks",
+          "Google Workspace automation (Calendar, Gmail, Drive, Sheets)",
+        ],
+      },
+      { label: "Next", items: ["Jest / RTL", "MySQL / MongoDB", "English B1 — actively improving"] },
+    ],
+    links: [
+      ["Cursor", "n8n agents"],
+      ["Claude Code", "n8n agents"],
+      ["n8n agents", "MCP connectors"],
+      ["n8n agents", "API integrations & webhooks"],
+      ["n8n agents", "Google Workspace automation (Calendar, Gmail, Drive, Sheets)"],
+    ],
+    highlight: "n8n agents",
+    group: { label: "Automation", from: 1, to: 2 },
   },
 ];

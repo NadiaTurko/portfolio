@@ -16,10 +16,27 @@ export interface Skill {
   level: SkillLevel;
 }
 
+export interface SkillRow {
+  label: string;
+  items: string[];
+}
+
 export interface SkillCategory {
   title: string;
+  subtitle: string;
   icon: string;
   skills: Skill[];
+  rows: SkillRow[];
+  /** Pairs of skill names to connect; same-line pairs get a straight link. */
+  links: [string, string][];
+  highlight?: string;
+  /** Rows from..to (inclusive) drawn inside a dashed, labelled box. */
+  group?: { label: string; from: number; to: number };
+}
+
+export interface SkillDiagramProps {
+  category: SkillCategory;
+  activeLevel: SkillLevel | null;
 }
 
 export interface ProjectMetric {
@@ -110,16 +127,21 @@ export interface CtaLink {
   href: string;
 }
 
-export interface HeroChip {
+export interface HeroFact {
   label: string;
-  icon: string;
+  value: string;
+}
+
+export interface TerminalLine {
+  command: string;
+  output: string;
 }
 
 export interface HomeContent {
   name: string;
   title: string;
   roles: string[];
-  chips: HeroChip[];
+  facts: HeroFact[];
   lead: string;
   paragraphs: string[];
   primaryCta: CtaLink;

@@ -176,6 +176,152 @@
   font-variant-numeric: tabular-nums;
 }
 
+/*=============== DIAGRAM ===============*/
+.skills__card {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills__card-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.skills__card-heading .skills__card-title {
+  flex: none;
+}
+
+.skills__card-subtitle {
+  margin-top: 0.15rem;
+  font-family: var(--mono-font);
+  font-size: 0.72rem;
+  color: var(--text-color);
+}
+
+.skills__diagram {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.skills__wires {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.skills__wire {
+  fill: none;
+  stroke: hsla(40, 25%, 60%, 0.45);
+  stroke-width: 1.2;
+  transition: stroke 0.25s ease;
+}
+
+/* Vertical links carry a slow dashed "data flow". */
+.skills__wire--flow {
+  stroke-dasharray: 3 4;
+  animation: skills-flow 1.6s linear infinite;
+}
+
+.skills__wire--active {
+  stroke: var(--accent-color);
+  stroke-width: 1.6;
+}
+
+@keyframes skills-flow {
+  to {
+    stroke-dashoffset: -14;
+  }
+}
+
+/* The row label sits in the corner so the nodes get the full card width. */
+.skills__row {
+  position: relative;
+  padding: 1.6rem 0 0.9rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.skills__row:last-child {
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.skills__row-label {
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  font-family: var(--mono-font);
+  font-size: 0.688rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.skills__row-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.1rem 1.25rem;
+}
+
+.skills__group {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 0.5rem 0.75rem 0.25rem;
+  border: 1px dashed var(--input-border);
+  border-radius: 1rem;
+}
+
+.skills__group .skills__row {
+  border: 0;
+}
+
+.skills__group-label {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  padding: 0.2rem 0.65rem;
+  font-family: var(--mono-font);
+  font-size: 0.7rem;
+  color: var(--title-color);
+  background: var(--body-color);
+  border: 1px solid var(--input-border);
+  border-radius: 999px;
+  transform: translateY(-50%);
+}
+
+/* Opaque nodes hide the connector ends behind them. */
+.skills__diagram .skills__tag {
+  position: relative;
+  z-index: 1;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  background-color: var(--body-color);
+  border-color: var(--input-border);
+}
+
+.skills__diagram .skills__tag--highlight {
+  padding: 0.55rem 1.1rem;
+  font-weight: var(--font-semi-bold);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px var(--accent-light), 0 0 24px hsla(38, 60%, 55%, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills__wire--flow {
+    animation: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .skills__row-nodes {
+    gap: 1rem;
+  }
+}
+
 /*=============== TAGS ===============*/
 .skills__tags {
   display: flex;

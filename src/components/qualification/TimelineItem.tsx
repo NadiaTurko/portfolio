@@ -4,6 +4,12 @@ import type { TimelineItemProps } from "../../types";
 const TimelineItem = ({ item, index, isOpen, onToggle }: TimelineItemProps) => {
   const panelId = `qualification-panel-${item.id}`;
   const isCurrent = item.period.endsWith("Present");
+  const host = item.subtitle
+    .split("·")[0]
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9.]+/g, "-")
+    .replace(/^-|-$/g, "");
 
   const summary = (
     <>
@@ -12,12 +18,6 @@ const TimelineItem = ({ item, index, isOpen, onToggle }: TimelineItemProps) => {
         <span className="qualification__subtitle">{item.subtitle}</span>
       </span>
       <span className="qualification__meta">
-        {isCurrent && (
-          <span className="qualification__now">
-            <span className="qualification__now-dot"></span>
-            Now
-          </span>
-        )}
         <span className="qualification__period">{item.period}</span>
       </span>
     </>
@@ -33,6 +33,21 @@ const TimelineItem = ({ item, index, isOpen, onToggle }: TimelineItemProps) => {
       <article
         className={`qualification__card${isOpen ? " qualification__card--open" : ""}`}
       >
+        <div className="qualification__bar" aria-hidden="true">
+          <span className="qualification__dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span className="qualification__host">{host}</span>
+          {isCurrent && (
+            <span className="qualification__now">
+              <span className="qualification__now-dot"></span>
+              Now
+            </span>
+          )}
+        </div>
+
         <h3 className="qualification__heading">
           {item.description ? (
             <button

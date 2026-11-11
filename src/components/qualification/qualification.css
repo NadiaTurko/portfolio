@@ -145,6 +145,43 @@
   border-color: var(--accent-color);
 }
 
+/* A browser-style title bar over each card. */
+.qualification__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 1.25rem;
+  font-family: var(--mono-font);
+  font-size: 0.7rem;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.qualification__dots {
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+.qualification__dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border-color);
+}
+
+.qualification__host {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.qualification__bar .qualification__now {
+  margin-left: auto;
+  font-family: var(--mono-font);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .qualification__heading {
   font-family: var(--body-font);
   font-size: inherit;

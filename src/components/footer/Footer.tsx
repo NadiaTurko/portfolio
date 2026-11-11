@@ -1,6 +1,7 @@
 import "./footer.css";
 import Reveal from "../common/Reveal";
 import SocialLinks from "../common/SocialLinks";
+import DecodeText from "../common/DecodeText";
 import { footerLinks } from "../../data/navigation";
 import { socialLinks } from "../../data/socialLinks";
 import { homeContent } from "../../data/home";
@@ -32,7 +33,11 @@ const Footer = () => {
             />
           </div>
 
-          <p className="footer__wordmark animated-title">{homeContent.name}</p>
+          <DecodeText
+            as="p"
+            className="footer__wordmark"
+            segments={[{ text: homeContent.name }]}
+          />
 
           <div className="footer__bottom">
             <span>

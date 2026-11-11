@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import "./home.css";
 import { heroProfileImg } from "../../assets";
-import { homeContent } from "../../data/home";
 import usePointerTilt from "../../hooks/usePointerTilt";
 import Data from "./Data";
 import ScrollDown from "./ScrollDown";
+import Terminal from "./Terminal";
 
 const Home = () => {
   const visualRef = useRef<HTMLDivElement>(null);
@@ -30,18 +30,7 @@ const Home = () => {
                 />
               </div>
 
-              {homeContent.chips.map((chip, index) => (
-                <span
-                  key={chip.label}
-                  className={`home__chip home__chip--${index + 1}`}
-                  aria-hidden="true"
-                >
-                  <span className="home__chip-inner">
-                    <i className={chip.icon}></i>
-                    {chip.label}
-                  </span>
-                </span>
-              ))}
+              <Terminal />
             </div>
           </div>
         </div>

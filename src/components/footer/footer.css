@@ -67,7 +67,7 @@
   height: 2.5rem;
   font-size: 1.15rem;
   color: var(--footer-text);
-  border: 1px solid hsla(38, 30%, 90%, 0.14);
+  border: 1px solid var(--input-border);
   border-radius: 0.75rem;
   transition: color 0.2s ease, border-color 0.2s ease, transform 0.25s ease;
 }
@@ -78,15 +78,15 @@
   transform: translateY(-3px);
 }
 
-/* Sized to span the page grid; the title color is remapped for the always-dark footer. */
+/* Sized to span the page grid. */
 .footer__wordmark {
-  --title-color: var(--footer-text);
   margin-block: 2.5rem 1.75rem;
   font-family: var(--heading-font);
-  font-size: min(7rem, 11.1vw);
+  font-size: min(10rem, 14vw);
   font-weight: var(--font-semi-bold);
   line-height: 1.1;
   letter-spacing: -0.02em;
+  color: var(--footer-text);
   text-align: center;
   white-space: nowrap;
 }
@@ -99,7 +99,7 @@
   padding-top: 1.125rem;
   font-size: var(--smaller-font-size);
   color: var(--footer-copy-muted);
-  border-top: 1px solid hsla(38, 30%, 90%, 0.12);
+  border-top: 1px solid var(--border-color);
 }
 
 @media screen and (max-width: 768px) {

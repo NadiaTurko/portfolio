@@ -2,9 +2,12 @@ import { homeContent } from "../../data/home";
 import useTypewriter from "../../hooks/useTypewriter";
 import SendIcon from "../common/SendIcon";
 import Social from "./Social";
+import DecodeText from "../common/DecodeText";
 
 const Data = () => {
   const typedRole = useTypewriter(homeContent.roles);
+  const [firstName, ...rest] = homeContent.name.split(" ");
+  const lastName = rest.join(" ");
 
   return (
     <div className="home__data">
@@ -15,9 +18,16 @@ const Data = () => {
           <span className="home__caret"></span>
         </span>
       </p>
-      <h1 className="home__title animated-title animated-title--play">
-        {homeContent.name}
-      </h1>
+      <DecodeText
+        as="h1"
+        className="home__title"
+        trigger="load"
+        delay={200}
+        segments={[
+          { text: firstName, className: "home__title-line" },
+          { text: lastName, italic: true, className: "home__title-line title-accent" },
+        ]}
+      />
       <p className="home__lead">{homeContent.lead}</p>
       {homeContent.paragraphs.map((paragraph) => (
         <p key={paragraph} className="home__description">
@@ -40,6 +50,14 @@ const Data = () => {
         </div>
         <Social />
       </div>
+      <dl className="home__facts">
+        {homeContent.facts.map((fact) => (
+          <div key={fact.label} className="home__fact">
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   );
 };
